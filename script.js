@@ -61,6 +61,7 @@ const sadSyn = [
     "bad",
     "bittersweet",
     "depressing",
+    "depressed",
     "depressive",
     "doleful",
     "gloomy",
@@ -125,7 +126,7 @@ const romanticSyn =[
       ]
 // worlds like sexy 
 //const sexySyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/sexy/json"
-const sexySun = 
+const sexySyn = 
  [
     "aphrodisiac",
     "aphrodisiacal",
@@ -174,13 +175,15 @@ const sexySun =
     "toothsome",
     "turned on",
     "voluptuous",
-    "sexy"
+    "sexy",
+    "flirty"
   ]
 // words like angry
 // const angrySyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/angry/json"
 const angrySyn = [
       "furious",
       "raging",
+      "angsty",
       "tempestuous",
       "wild",
       "furious",
@@ -222,7 +225,9 @@ const scarySyn = [
         "shivery",
         "shuddery",
         "alarming",
-        "scary"
+        "scary",
+        "spooky",
+        "dark"
 ]
 // applying background image. Credit to "superviespiel" on Reddit
 
@@ -255,11 +260,20 @@ function getSyn(event) {
     // $.ajax(happySyn).then(function (data) {
     for (i = 0; i < sexySyn.length; i++) {
         if (happySyn[i] === $userInput.val() || $userInput.val() === 'happy') {
-            console.log('hooray')
+            console.log('hooray');
+        } else if (sadSyn[i] === $userInput.val()) {
+            console.log('sad');
+        } else if (romanticSyn[i] === $userInput.val()) {
+            console.log('love');
+        } else if (sexySyn[i] === $userInput.val()) {
+            console.log('saucy');
+        } else if (angrySyn[i] === $userInput.val()) {
+            console.log('mad')
+        } else if (scarySyn[i] === $userInput.val()) {
+            console.log('spooky')
         }
-    } for (i =) 
+    }
 }
-
 
 
 // event listener to run the function getSyn when the submit button is clicked
