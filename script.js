@@ -23,8 +23,7 @@ const scaryMusic = 'http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&ar
 
 // The links below direct me (with my API key to Big Huge Thesaurus) to an array of synonyms for specified words. 
 
-// words like happy
-// const happySyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/happy/json"
+// words like happy= "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/happy/json"
 const happySyn = [
     "felicitous",
     "glad",
@@ -46,11 +45,41 @@ const happySyn = [
     "laughing",
     "prosperous",
     "riant",
-    "willing"
+    "willing",
+    "overjoyed",
+    "excited",
+    "positive",
+    "wonderful",
+    "amazing",
+    "incredible",
+    "celebratory",
+    "sunny",
+    "ready",
+    "fun",
+    "energized",
+    "awake",
+    "free",
+    "turnt",
+    "cheesy",
+    "productive",
+    "hopeful",
+    "optimistic",
+    "creative",
+    "funky",
+    "groovy",
+    "hip",
+    "independant",
+    "confident",
+    "powerful",
+    "vibey",
+    "sassy",
+    "good",
+    "great",
+    "fresh",
+    "refreshed"
 ]
 
-// words like sad
-// const sadSyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/sad/json"
+// words like sad= "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/sad/json"
 const sadSyn = [
     "sad",
     "deplorable",
@@ -76,10 +105,86 @@ const sadSyn = [
     "tragical",
     "tragicomic",
     "tragicomical",
-    "wistful"
+    "wistful",
+    "lonely",
+    "remorseful",
+    "shameful",
+    "ashamed",
+    "shitty",
+    "misunderstood",
+    "heartbroken",
+    "ugly",
+    "anxious",
+    "confused",
+    "vulnerable",
+    "solemn",
+    "blue",
+    "bored",
+    "embarrassed",
+    "guilty",
+    "shy",
+    "exhausted",
+    "worn out",
+    "pooped",
+    "nervous",
+    "moody",
+    "bad",
+    "sucky",
+    "horrible",
+    "awful",
+    "terrible"
 ]
-// words like romantic 
-// const romanticSyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/loving/json"
+
+// words like peaceful : "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/peaceful/json"
+const peacefulSyn = [
+    "passive",
+    "law-abiding",
+    "amicable",
+    "nonaggressive",
+    "nonviolent",
+    "quiet",
+    "unaggressive",
+    "peaceable",
+    "dovish",
+    "halcyon",
+    "irenic",
+    "nonbelligerent",
+    "nonviolent",
+    "orderly",
+    "pacific",
+    "pacifist",
+    "pacifistic",
+    "peace-loving",
+    "undisturbed",
+    "peaceful",
+    "calm",
+    "tired",
+    "sleepy",
+    "lowkey",
+    "easy",
+    "easy-going",
+    "slow",
+    "mellow",
+    "nostalgic",
+    "comfy",
+    "comfortable",
+    "homey",
+    "homie",
+    "apathetic",
+    "indifferent",
+    "meditative",
+    "careful",
+    "patient",
+    "cautious",
+    "chill",
+    "so so",
+    "so-so",
+    "gentle",
+    "soft",
+    "cool",
+  ]
+
+// words like romantic = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/loving/json"
 const romanticSyn =[
         "attached",
         "committed",
@@ -122,7 +227,12 @@ const romanticSyn =[
         "touchy-feely",
         "uxorious",
         "warm",
-        "romantic"
+        "romantic",
+        "sweet",
+        "sentimental",
+        "love",
+        "love struck",
+        "love-strucl"
       ]
 // worlds like sexy 
 //const sexySyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/sexy/json"
@@ -215,7 +325,30 @@ const angrySyn = [
       "wrathful",
       "wroth",
       "wrothful",
-      "angry"
+      "angry",
+      "frustrated",
+      "irritated",
+      "over-it",
+      "done",
+      "annoyed",
+      "pessimistic",
+      "hostile",
+      "envious",
+      "jealous",
+      "hateful",
+      "crazy",
+      "disgusted",
+      "overwhelmed",
+      "shocked",
+      "surprised",
+      "scared",
+      "fearful",
+      "enraged",
+      "hysterical",
+      "edgy",
+      "punk",
+      "punky",
+      "indie"
     ]
 // words like scary
 // const scarySyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/scary/json"
@@ -227,7 +360,15 @@ const scarySyn = [
         "alarming",
         "scary",
         "spooky",
-        "dark"
+        "dark",
+        "freaky",
+        "wacky",
+        "weird",
+        "wild",
+        "suspicious",
+        "mischevious",
+        "frightened",
+        "smug"
 ]
 // applying background image. Credit to "superviespiel" on Reddit
 
@@ -258,19 +399,21 @@ const $body = $('body');
 function getSyn(event) {
     event.preventDefault();
     // $.ajax(happySyn).then(function (data) {
-    for (i = 0; i < sexySyn.length; i++) {
+    for (i = 0; i < 150; i++) {
         if (happySyn[i] === $userInput.val() || $userInput.val() === 'happy') {
-            console.log('hooray');
+            console.log(happyMusic);
         } else if (sadSyn[i] === $userInput.val()) {
-            console.log('sad');
+            console.log(sadMusic);
         } else if (romanticSyn[i] === $userInput.val()) {
-            console.log('love');
+            console.log(romanticMusic);
         } else if (sexySyn[i] === $userInput.val()) {
-            console.log('saucy');
+            console.log(sexyMusic);
         } else if (angrySyn[i] === $userInput.val()) {
-            console.log('mad')
+            console.log(angryMusic)
         } else if (scarySyn[i] === $userInput.val()) {
-            console.log('spooky')
+            console.log(scaryMusic)
+        } else if (peacefulSyn[i] === $userInput.val()) {
+            console.log(peacefulMusic)
         }
     }
 }
