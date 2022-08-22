@@ -16,7 +16,7 @@ const romanticMusic = 'http://ws.audioscrobbler.com/2.0/?method=track.getsimilar
 const sexyMusic = 'http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&artist=trey+songz&track=slow+motion&api_key=1bc71772e81d1ed9594a4ad8921042ba&format=json'
 
 //songs like "Bad Kids" by The Black Lips
-const angryMusic = 'http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&artist=the+black+lips&track=bad+kids&api_key=1bc71772e81d1ed9594a4ad8921042ba&format=json' 
+const angryMusic = 'http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&artist=the+black+lips&track=bad+kids&api_key=1bc71772e81d1ed9594a4ad8921042ba&format=json'
 
 // songs like Halloween Theme by John Carpenter
 const scaryMusic = 'http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&artist=john+carpenter&track=halloween+theme&api_key=1bc71772e81d1ed9594a4ad8921042ba&format=json'
@@ -24,7 +24,30 @@ const scaryMusic = 'http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&ar
 // The links below direct me (with my API key to Big Huge Thesaurus) to an array of synonyms for specified words. 
 
 // words like happy
-const happySyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/happy/json"
+// const happySyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/happy/json"
+const happySyn = [
+    "felicitous",
+    "glad",
+    "well-chosen",
+    "cheerful",
+    "content",
+    "contented",
+    "elated",
+    "euphoric",
+    "joyful",
+    "joyous",
+    "felicitous",
+    "blessed",
+    "blissful",
+    "bright",
+    "fortunate",
+    "golden",
+    "halcyon",
+    "laughing",
+    "prosperous",
+    "riant",
+    "willing"
+]
 
 // words like sad
 const sadSyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/sad/json"
@@ -51,28 +74,34 @@ const $userInput = $('.enter');
 const $body = $('body');
 
 // the function should 
-    // match the user input adjective with a synonym from one of the synonym links
-    // if adj is a happy synonym, shuffle the songs in const happyMusic
-        //output one song's 'name', its artist 'name' and URL
-    // if adj is sad, shuffle the songs in sadMusic
-        //output one song's 'name', its artist 'name' and URL
-    // if adj is peaceful, shuffle the songs in peacefulMusic
-        //output one song's 'name', its artist 'name' and URL
-    // if adj is romantic, shuffle the songs in romanticMusic
-        //output one song's 'name', its artist 'name' and URL
-    // if the adj is sexy, shuffle the songs in sexyMusic
-        //output one song's 'name', its artist 'name' and URL
-    // if the adj is angry, shuffle the songs in angryMusic
-        //output one song's 'name', its artist 'name' and URL
-    // if the adj is scary, shuffle the songs in scaryMusic
-        //output one song's 'name', its artist 'name' and URL
+// match the user input adjective with a synonym from one of the synonym links
+// if adj is a happy synonym, shuffle the songs in const happyMusic
+//output one song's 'name', its artist 'name' and URL
+// if adj is sad, shuffle the songs in sadMusic
+//output one song's 'name', its artist 'name' and URL
+// if adj is peaceful, shuffle the songs in peacefulMusic
+//output one song's 'name', its artist 'name' and URL
+// if adj is romantic, shuffle the songs in romanticMusic
+//output one song's 'name', its artist 'name' and URL
+// if the adj is sexy, shuffle the songs in sexyMusic
+//output one song's 'name', its artist 'name' and URL
+// if the adj is angry, shuffle the songs in angryMusic
+//output one song's 'name', its artist 'name' and URL
+// if the adj is scary, shuffle the songs in scaryMusic
+//output one song's 'name', its artist 'name' and URL
+
+function getSyn(event) {
+    event.preventDefault();
+    // $.ajax(happySyn).then(function (data) {
+    for (i = 0; i < happySyn.length; i++) {
+        if (happySyn[i] === $userInput.val() || $userInput.val() === 'happy') {
+            console.log('hooray')
+        }
+    }
+}
 
 
 
+// event listener to run the function getSyn when the submit button is clicked
 
-
-
-
-
-
-
+$submitBtn.on('click', getSyn)
