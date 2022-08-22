@@ -21,4 +21,58 @@ const angryMusic = 'http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&ar
 // songs like Halloween Theme by John Carpenter
 const scaryMusic = 'http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&artist=john+carpenter&track=halloween+theme&api_key=1bc71772e81d1ed9594a4ad8921042ba&format=json'
 
+// The links below direct me (with my API key to Big Huge Thesaurus) to an array of synonyms for specified words. 
+
+// words like happy
+const happySyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/happy/json"
+
+// words like sad
+const sadSyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/sad/json"
+
+// words like romantic 
+const romanticSyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/loving/json"
+
+// worlds like sexy 
+const sexySyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/sexy/json"
+
+// words like angry
+const angrySyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/angry/json"
+
+// words like scary
+const scarySyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/scary/json"
+
+// applying background image. Credit to "superviespiel" on Reddit
+
 $('body').css('background-image', 'url("https://media0.giphy.com/media/39lWTXEdmp4qnZtHIK/giphy.gif")')
+
+// defining global variables
+const $submitBtn = $('.push');
+const $userInput = $('.enter');
+const $body = $('body');
+
+// the function should 
+    // match the user input adjective with a synonym from one of the synonym links
+    // if adj is a happy synonym, shuffle the songs in const happyMusic
+        //output one song's 'name', its artist 'name' and URL
+    // if adj is sad, shuffle the songs in sadMusic
+        //output one song's 'name', its artist 'name' and URL
+    // if adj is peaceful, shuffle the songs in peacefulMusic
+        //output one song's 'name', its artist 'name' and URL
+    // if adj is romantic, shuffle the songs in romanticMusic
+        //output one song's 'name', its artist 'name' and URL
+    // if the adj is sexy, shuffle the songs in sexyMusic
+        //output one song's 'name', its artist 'name' and URL
+    // if the adj is angry, shuffle the songs in angryMusic
+        //output one song's 'name', its artist 'name' and URL
+    // if the adj is scary, shuffle the songs in scaryMusic
+        //output one song's 'name', its artist 'name' and URL
+
+
+
+
+
+
+
+
+
+
