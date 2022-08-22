@@ -50,20 +50,180 @@ const happySyn = [
 ]
 
 // words like sad
-const sadSyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/sad/json"
-
+// const sadSyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/sad/json"
+const sadSyn = [
+    "sad",
+    "deplorable",
+    "distressing",
+    "lamentable",
+    "pitiful",
+    "sorry",
+    "bad",
+    "bittersweet",
+    "depressing",
+    "depressive",
+    "doleful",
+    "gloomy",
+    "heavyhearted",
+    "melancholic",
+    "melancholy",
+    "mournful",
+    "pensive",
+    "saddening",
+    "sorrowful",
+    "tragic",
+    "tragical",
+    "tragicomic",
+    "tragicomical",
+    "wistful"
+]
 // words like romantic 
-const romanticSyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/loving/json"
-
+// const romanticSyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/loving/json"
+const romanticSyn =[
+        "attached",
+        "committed",
+        "lovable",
+        "loveable",
+        "passionate",
+        "warmhearted",
+        "admiring",
+        "adoring",
+        "affectionate",
+        "affectioned",
+        "amative",
+        "amatory",
+        "amorous",
+        "captivated",
+        "caressing",
+        "caressive",
+        "caring",
+        "charmed",
+        "doting",
+        "dotty",
+        "enamored",
+        "fatherly",
+        "fond",
+        "gaga",
+        "idolatrous",
+        "in love",
+        "in-love",
+        "infatuated",
+        "loverlike",
+        "loverly",
+        "lovesome",
+        "overfond",
+        "romantic",
+        "smitten",
+        "soft on",
+        "taken with",
+        "tender",
+        "tenderhearted",
+        "touchy-feely",
+        "uxorious",
+        "warm",
+        "romantic"
+      ]
 // worlds like sexy 
-const sexySyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/sexy/json"
-
+//const sexySyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/sexy/json"
+const sexySun = 
+ [
+    "aphrodisiac",
+    "aphrodisiacal",
+    "exciting",
+    "seductive",
+    "aroused",
+    "autoerotic",
+    "blue",
+    "coquettish",
+    "erotic",
+    "flirtatious",
+    "gamey",
+    "gamy",
+    "highly-sexed",
+    "horny",
+    "hot",
+    "intimate",
+    "juicy",
+    "lascivious",
+    "lecherous",
+    "leering",
+    "lewd",
+    "libidinous",
+    "lubricious",
+    "luscious",
+    "lustful",
+    "naughty",
+    "orgiastic",
+    "oversexed",
+    "pornographic",
+    "provocative",
+    "prurient",
+    "racy",
+    "randy",
+    "raunchy",
+    "red-hot",
+    "risque",
+    "ruttish",
+    "salacious",
+    "sex-starved",
+    "sexed",
+    "sexual",
+    "spicy",
+    "steamy",
+    "titillating",
+    "toothsome",
+    "turned on",
+    "voluptuous",
+    "sexy"
+  ]
 // words like angry
-const angrySyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/angry/json"
-
+// const angrySyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/angry/json"
+const angrySyn = [
+      "furious",
+      "raging",
+      "tempestuous",
+      "wild",
+      "furious",
+      "aggravated",
+      "angered",
+      "black",
+      "choleric",
+      "enraged",
+      "hot under the collar",
+      "huffy",
+      "incensed",
+      "indignant",
+      "infuriated",
+      "irascible",
+      "irate",
+      "ireful",
+      "livid",
+      "mad",
+      "maddened",
+      "outraged",
+      "provoked",
+      "smoldering",
+      "smouldering",
+      "sore",
+      "stormy",
+      "upset",
+      "umbrageous",
+      "unhealthy",
+      "wrathful",
+      "wroth",
+      "wrothful",
+      "angry"
+    ]
 // words like scary
-const scarySyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/scary/json"
-
+// const scarySyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/scary/json"
+const scarySyn = [
+        "chilling",
+        "scarey",
+        "shivery",
+        "shuddery",
+        "alarming",
+        "scary"
+]
 // applying background image. Credit to "superviespiel" on Reddit
 
 $('body').css('background-image', 'url("https://media0.giphy.com/media/39lWTXEdmp4qnZtHIK/giphy.gif")')
@@ -93,11 +253,11 @@ const $body = $('body');
 function getSyn(event) {
     event.preventDefault();
     // $.ajax(happySyn).then(function (data) {
-    for (i = 0; i < happySyn.length; i++) {
+    for (i = 0; i < sexySyn.length; i++) {
         if (happySyn[i] === $userInput.val() || $userInput.val() === 'happy') {
             console.log('hooray')
         }
-    }
+    } for (i =) 
 }
 
 
