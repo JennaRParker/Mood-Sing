@@ -21,3 +21,4 @@ const angryMusic = 'http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&ar
 // songs like Halloween Theme by John Carpenter
 const scaryMusic = 'http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&artist=john+carpenter&track=halloween+theme&api_key=1bc71772e81d1ed9594a4ad8921042ba&format=json'
 
+$('body').css('background-image', 'url("https://media0.giphy.com/media/39lWTXEdmp4qnZtHIK/giphy.gif")')
