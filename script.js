@@ -379,14 +379,6 @@ const $submitBtn = $('.push');
 const $userInput = $('.enter');
 const $body = $('body');
 
-
-// ajax
-
-let ajaxHappy= $.ajax(happyMusic).then(function (data) {
-    let randomIndex = Math.floor(Math.random() * 100);
-    let randomSong = data.similartracks.track[randomIndex]
-})
-
 // the function should 
 // match the user input adjective with a synonym from one of the synonym links
 // if adj is a happy synonym, shuffle the songs in const happyMusic
@@ -404,34 +396,58 @@ let ajaxHappy= $.ajax(happyMusic).then(function (data) {
 // if the adj is scary, shuffle the songs in scaryMusic
 //output one song's 'name', its artist 'name' and URL
 
-
-
 function getSyn(event) {
     event.preventDefault();
     // $.ajax(happySyn).then(function (data) {
     for (i = 0; i < 100; i++) {
         if (happySyn[i] === $userInput.val() || $userInput.val() === 'happy') {
-            let ajaxHappy= $.ajax(happyMusic).then(function (data) {
+            let ajaxHappy = $.ajax(happyMusic).then(function (data) {
                 let randomIndex = Math.floor(Math.random() * 100);
                 let randomSong = data.similartracks.track[randomIndex]
                 console.log(randomSong.name)
             })
-            } else if (sadSyn[i] === $userInput.val()) {
-            console.log(sadMusic);
+        } else if (sadSyn[i] === $userInput.val()) {
+            let ajaxSad = $.ajax(sadMusic).then(function (data) {
+                let randomIndex = Math.floor(Math.random() * 100);
+                let randomSong = data.similartracks.track[randomIndex]
+                console.log(randomSong.name)
+            })
         } else if (romanticSyn[i] === $userInput.val()) {
-            console.log(romanticMusic);
+            let ajaxSad = $.ajax(romanticMusic).then(function (data) {
+                let randomIndex = Math.floor(Math.random() * 100);
+                let randomSong = data.similartracks.track[randomIndex]
+                console.log(randomSong.name)
+            })
         } else if (sexySyn[i] === $userInput.val()) {
-            console.log(sexyMusic);
+            let ajaxSad= $.ajax(sexyMusic).then(function (data) {
+                let randomIndex = Math.floor(Math.random() * 100);
+                let randomSong = data.similartracks.track[randomIndex]
+                console.log(randomSong.name)
+            })
         } else if (angrySyn[i] === $userInput.val()) {
-            console.log(angryMusic)
+            let ajaxSad= $.ajax(angryMusic).then(function (data) {
+                let randomIndex = Math.floor(Math.random() * 100);
+                let randomSong = data.similartracks.track[randomIndex]
+                console.log(randomSong.name)
+            })
         } else if (scarySyn[i] === $userInput.val()) {
-            console.log(scaryMusic)
+            let ajaxSad= $.ajax(scaryMusic).then(function (data) {
+                let randomIndex = Math.floor(Math.random() * 100);
+                let randomSong = data.similartracks.track[randomIndex]
+                console.log(randomSong.name)
+            })
         } else if (peacefulSyn[i] === $userInput.val()) {
-            console.log(peacefulMusic)
+            let ajaxSad= $.ajax(peacefulMusic).then(function (data) {
+                let randomIndex = Math.floor(Math.random() * 100);
+                let randomSong = data.similartracks.track[randomIndex]
+                console.log(randomSong.name)
+            })
         }
 
     }
 }
+
+
 
 
 // event listener to run the function getSyn when the submit button is clicked
