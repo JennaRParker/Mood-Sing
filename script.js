@@ -421,9 +421,11 @@ function songDisplay(musicChoice) {
     $.ajax(musicChoice).then(function (data) {
         let randomIndex = Math.floor(Math.random() * 100);
         let randomSong = data.similartracks.track[randomIndex]
-        let $p = $(`<body><p>${randomSong.name}</p></body>`)
-        let $url = $(`<body><p>${randomSong.url}</p></body>`)
+        let $p = $(`<body><p class= 'title'>${randomSong.name}</p></body>`)
+        let $p2 = $(`<body><p class= 'artist'>${randomSong.artist.name}</p></body>`)
+        let $url = $(`<body><<a class= 'url' href="${randomSong.url}" target="_blank"> LISTEN NOW </a>`)
         $('body').append($p);
+        $('body').append($p2);
         $('body').append($url);
     })
 }

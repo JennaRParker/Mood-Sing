@@ -34,3 +34,24 @@ input{
     background-color: #df36f5;
     color: white;
 }
+
+.url {
+    font-size: 20px;
+    color: white;
+    background-color: black;
+}
+
+.title {
+    font-size: 35px;
+    margin: 35px 0px 10px 0px
+}
+
+.artist {
+    font-size: 25px;
+    margin: 10px 0px
+}
+
+p {
+    background-color: white;
+    color: black;
+}
