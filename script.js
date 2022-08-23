@@ -229,7 +229,6 @@ const romanticSyn = [
     "loverly",
     "lovesome",
     "overfond",
-    "romantic",
     "smitten",
     "soft on",
     "taken with",
@@ -243,7 +242,7 @@ const romanticSyn = [
     "sentimental",
     "love",
     "love struck",
-    "love-strucl"
+    "love-struck"
 ]
 // worlds like sexy 
 //const sexySyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/sexy/json"
@@ -393,10 +392,12 @@ const $submitBtn = $('.push');
 const $userInput = $('.enter');
 const $body = $('body');
 
-$submitBtn.hover(function() {
+//submit button changes colors if hovered on
+
+$submitBtn.hover(function () {
     $(this).css('background-color', 'blueviolet');
-}, function(){
-$(this).css( "background-color", "#df36f5" );
+}, function () {
+    $(this).css("background-color", "#df36f5");
 });
 
 // the function should 
@@ -416,59 +417,37 @@ $(this).css( "background-color", "#df36f5" );
 // if the adj is scary, shuffle the songs in scaryMusic
 //output one song's 'name', its artist 'name' and URL
 
+function songDisplay(musicChoice) {
+    $.ajax(musicChoice).then(function (data) {
+        let randomIndex = Math.floor(Math.random() * 100);
+        let randomSong = data.similartracks.track[randomIndex]
+        let $p = $(`<body><p>${randomSong.name}<p><body>`)
+        $('body').append($p)
+    })
+}
+
+
 function getSyn(event) {
     event.preventDefault();
     // $.ajax(happySyn).then(function (data) {
     for (i = 0; i < 100; i++) {
         if (happySyn[i] === $userInput.val()) {
-            let ajax = $.ajax(happyMusic).then(function (data) {
-                let randomIndex = Math.floor(Math.random() * 100);
-                let randomSong = data.similartracks.track[randomIndex]
-                console.log(randomSong.name)
-            })
+            songDisplay(happyMusic);
         } else if (sadSyn[i] === $userInput.val()) {
-            let ajax = $.ajax(sadMusic).then(function (data) {
-                let randomIndex = Math.floor(Math.random() * 100);
-                let randomSong = data.similartracks.track[randomIndex]
-                console.log(randomSong.name)
-            })
-        } else if (romanticSyn[i] === $userInput.val()) {
-            let ajax = $.ajax(romanticMusic).then(function (data) {
-                let randomIndex = Math.floor(Math.random() * 100);
-                let randomSong = data.similartracks.track[randomIndex]
-                console.log(randomSong.name)
-            })
+            songDisplay(sadMusic);
         } else if (sexySyn[i] === $userInput.val()) {
-            let ajax = $.ajax(sexyMusic).then(function (data) {
-                let randomIndex = Math.floor(Math.random() * 100);
-                let randomSong = data.similartracks.track[randomIndex]
-                console.log(randomSong.name)
-            })
+            songDisplay(sexyMusic);
         } else if (angrySyn[i] === $userInput.val()) {
-            let ajax = $.ajax(angryMusic).then(function (data) {
-                let randomIndex = Math.floor(Math.random() * 100);
-                let randomSong = data.similartracks.track[randomIndex]
-                console.log(randomSong.name)
-            })
+            songDisplay(angryMusic);
         } else if (scarySyn[i] === $userInput.val()) {
-            let ajax = $.ajax(scaryMusic).then(function (data) {
-                let randomIndex = Math.floor(Math.random() * 100);
-                let randomSong = data.similartracks.track[randomIndex]
-                console.log(randomSong.name)
-            })
+            songDisplay(scaryMusic);
         } else if (peacefulSyn[i] === $userInput.val()) {
-            let ajax = $.ajax(peacefulMusic).then(function (data) {
-                let randomIndex = Math.floor(Math.random() * 100);
-                let randomSong = data.similartracks.track[randomIndex]
-                console.log(randomSong.name)
-            })
-        }
-
+            songDisplay(peacefulMusic);
+        } else if (romanticSyn[i] === $userInput.val()) {
+            songDisplay(romanticMusic);  
+        }          
     }
 }
-
-
-
 
 // event listener to run the function getSyn when the submit button is clicked
 
