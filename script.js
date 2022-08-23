@@ -25,6 +25,7 @@ const scaryMusic = 'http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&ar
 
 // words like happy= "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/happy/json"
 const happySyn = [
+    "happy",
     "felicitous",
     "glad",
     "well-chosen",
@@ -76,7 +77,11 @@ const happySyn = [
     "good",
     "great",
     "fresh",
-    "refreshed"
+    "refreshed",
+    "hpyer",
+    "energized",
+    "energetic",
+    "ecstatic"
 ]
 
 // words like sad= "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/sad/json"
@@ -132,7 +137,8 @@ const sadSyn = [
     "sucky",
     "horrible",
     "awful",
-    "terrible"
+    "terrible",
+    "serious"
 ]
 
 // words like peaceful : "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/peaceful/json"
@@ -182,6 +188,11 @@ const peacefulSyn = [
     "gentle",
     "soft",
     "cool",
+    "okay",
+    "hanging-in",
+    "hanging in",
+    "content",
+    "relaxed"
 ]
 
 // words like romantic = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/loving/json"
@@ -348,7 +359,9 @@ const angrySyn = [
     "edgy",
     "punk",
     "punky",
-    "indie"
+    "indie",
+    "stressed",
+    "tense"
 ]
 // words like scary
 // const scarySyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/scary/json"
@@ -374,10 +387,17 @@ const scarySyn = [
 
 $('body').css('background-image', 'url("https://media0.giphy.com/media/39lWTXEdmp4qnZtHIK/giphy.gif")')
 
+
 // defining global variables
 const $submitBtn = $('.push');
 const $userInput = $('.enter');
 const $body = $('body');
+
+$submitBtn.hover(function() {
+    $(this).css('background-color', 'blueviolet');
+}, function(){
+$(this).css( "background-color", "#df36f5" );
+});
 
 // the function should 
 // match the user input adjective with a synonym from one of the synonym links
@@ -400,44 +420,44 @@ function getSyn(event) {
     event.preventDefault();
     // $.ajax(happySyn).then(function (data) {
     for (i = 0; i < 100; i++) {
-        if (happySyn[i] === $userInput.val() || $userInput.val() === 'happy') {
-            let ajaxHappy = $.ajax(happyMusic).then(function (data) {
+        if (happySyn[i] === $userInput.val()) {
+            let ajax = $.ajax(happyMusic).then(function (data) {
                 let randomIndex = Math.floor(Math.random() * 100);
                 let randomSong = data.similartracks.track[randomIndex]
                 console.log(randomSong.name)
             })
         } else if (sadSyn[i] === $userInput.val()) {
-            let ajaxSad = $.ajax(sadMusic).then(function (data) {
+            let ajax = $.ajax(sadMusic).then(function (data) {
                 let randomIndex = Math.floor(Math.random() * 100);
                 let randomSong = data.similartracks.track[randomIndex]
                 console.log(randomSong.name)
             })
         } else if (romanticSyn[i] === $userInput.val()) {
-            let ajaxSad = $.ajax(romanticMusic).then(function (data) {
+            let ajax = $.ajax(romanticMusic).then(function (data) {
                 let randomIndex = Math.floor(Math.random() * 100);
                 let randomSong = data.similartracks.track[randomIndex]
                 console.log(randomSong.name)
             })
         } else if (sexySyn[i] === $userInput.val()) {
-            let ajaxSad= $.ajax(sexyMusic).then(function (data) {
+            let ajax = $.ajax(sexyMusic).then(function (data) {
                 let randomIndex = Math.floor(Math.random() * 100);
                 let randomSong = data.similartracks.track[randomIndex]
                 console.log(randomSong.name)
             })
         } else if (angrySyn[i] === $userInput.val()) {
-            let ajaxSad= $.ajax(angryMusic).then(function (data) {
+            let ajax = $.ajax(angryMusic).then(function (data) {
                 let randomIndex = Math.floor(Math.random() * 100);
                 let randomSong = data.similartracks.track[randomIndex]
                 console.log(randomSong.name)
             })
         } else if (scarySyn[i] === $userInput.val()) {
-            let ajaxSad= $.ajax(scaryMusic).then(function (data) {
+            let ajax = $.ajax(scaryMusic).then(function (data) {
                 let randomIndex = Math.floor(Math.random() * 100);
                 let randomSong = data.similartracks.track[randomIndex]
                 console.log(randomSong.name)
             })
         } else if (peacefulSyn[i] === $userInput.val()) {
-            let ajaxSad= $.ajax(peacefulMusic).then(function (data) {
+            let ajax = $.ajax(peacefulMusic).then(function (data) {
                 let randomIndex = Math.floor(Math.random() * 100);
                 let randomSong = data.similartracks.track[randomIndex]
                 console.log(randomSong.name)
