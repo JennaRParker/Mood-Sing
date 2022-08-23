@@ -403,19 +403,15 @@ $submitBtn.hover(function () {
 // the function should 
 // match the user input adjective with a synonym from one of the synonym links
 // if adj is a happy synonym, shuffle the songs in const happyMusic
-//output one song's 'name', its artist 'name' and URL
-// if adj is sad, shuffle the songs in sadMusic
-//output one song's 'name', its artist 'name' and URL
-// if adj is peaceful, shuffle the songs in peacefulMusic
-//output one song's 'name', its artist 'name' and URL
-// if adj is romantic, shuffle the songs in romanticMusic
-//output one song's 'name', its artist 'name' and URL
-// if the adj is sexy, shuffle the songs in sexyMusic
-//output one song's 'name', its artist 'name' and URL
-// if the adj is angry, shuffle the songs in angryMusic
-//output one song's 'name', its artist 'name' and URL
-// if the adj is scary, shuffle the songs in scaryMusic
-//output one song's 'name', its artist 'name' and URL
+// if adj is sad- sadMusic
+// if adj is peaceful-peacefulMusic
+// if adj is romantic-romanticMusic
+// if the adj is sexy-sexyMusic
+// if the adj is angry-angryMusic
+// if the adj is scary-scaryMusic
+//output one song's 'title', the 'artist' and URL
+
+//function songDisplay is triggered when the user input is matched to a synonym (when the conditional statement of getSyn is fulfilled). It selects a random song in the specified genre and will output the title, artist and URL
 
 function songDisplay(musicChoice) {
     $.ajax(musicChoice).then(function (data) {
@@ -424,12 +420,15 @@ function songDisplay(musicChoice) {
         let $p = $(`<body><p class= 'title'>${randomSong.name}</p></body>`)
         let $p2 = $(`<body><p class= 'artist'>${randomSong.artist.name}</p></body>`)
         let $url = $(`<body><<a class= 'url' href="${randomSong.url}" target="_blank"> LISTEN NOW </a>`)
+        $('p').remove();
+        $('a').remove()
         $('body').append($p);
         $('body').append($p2);
         $('body').append($url);
     })
 }
 
+//function getSyn checks for a match and calls on function songDisplay
 
 function getSyn(event) {
     event.preventDefault();
@@ -453,6 +452,6 @@ function getSyn(event) {
     }
 }
 
-// event listener to run the function getSyn when the submit button is clicked
+// event listener to trigger getSyn function when the submit button is clicked
 
 $submitBtn.on('click', getSyn)
