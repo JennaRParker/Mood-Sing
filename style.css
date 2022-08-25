@@ -38,7 +38,8 @@ input{
 .url {
     font-size: 20px;
     color: white;
-    background-color: black;
+    background-color: #df36f5;
+    border-radius: 50px;
 }
 
 .title {
@@ -54,6 +55,7 @@ input{
 p {
     background-color: white;
     color: black;
+    border-radius: 50px;
 }
 
 .helper {

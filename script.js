@@ -417,6 +417,12 @@ $submitBtn.hover(function () {
     $(this).css("background-color", "#df36f5");
 });
 
+$submitBtn.hover(function () {
+    $(this).css('background-color', 'blueviolet');
+}, function () {
+    $(this).css("background-color", "#df36f5");
+});
+
 
 // the function should 
 // match the user input adjective with a synonym from one of the synonym links
@@ -438,6 +444,11 @@ function songDisplay(musicChoice) {
         let $p = $(`<body><p class= 'title'>${randomSong.name}</p></body>`)
         let $p2 = $(`<body><p class= 'artist'>${randomSong.artist.name}</p></body>`)
         let $url = $(`<body><<a class= 'url' href="${randomSong.url}" target="_blank"> LISTEN NOW </a>`)
+        $url.hover(function () {
+            $(this).css('background-color', 'blueviolet');
+        }, function () {
+            $(this).css("background-color", "#df36f5");
+        });
         $('p').remove();
         $('a').remove()
         $('main').append($p);
