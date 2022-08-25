@@ -485,6 +485,8 @@ function getSyn(event) {
 
 $submitBtn.on('click', getSyn)
 
+// credit of modal info-graphic to Katherine Velie at http://antweak.blogspot.com/2012/03/mood-ring-for-my-interior-mood-swings.html
+
 $('.open-modal').on('click', function (makeVisible) {
     const $modalContent = $(`<div class="modal-content"><img src="http://1.bp.blogspot.com/-fTHvMZqJCVw/T3RDQU8p-VI/AAAAAAAABEI/7vVcexEjR-Y/s1600/moodring.png" width="300" height="300"></div>`);
     const $remove = $(`<button type="button" class="open-modal" data-open=".modalId">X</button>`)
