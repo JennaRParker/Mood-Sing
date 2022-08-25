@@ -84,7 +84,13 @@ const happySyn = [
     "ecstatic",
     "awesome",
     "silly",
-    "active"
+    "active",
+    "pleasant",
+    "vibing",
+    "hot",
+    "senational",
+    "popular",
+    "extraordinary",
 ]
 
 // words like sad= "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/sad/json"
@@ -145,7 +151,14 @@ const sadSyn = [
     "bummed",
     "cautious",
     "nervous",
-    "timid"
+    "timid",
+    "mediocre",
+    "heavy",
+    "worried",
+    "innocent",
+    "pathetic",
+    "measly",
+    "down"
 ]
 
 // words like peaceful : "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/peaceful/json"
@@ -200,7 +213,11 @@ const peacefulSyn = [
     "hanging in",
     "content",
     "relaxed",
-    "cool"
+    "cool",
+    "lovely",
+    "average",
+    "meh",
+
     
 ]
 
@@ -376,8 +393,15 @@ const angrySyn = [
     "strained",
     "unsettled",
     "mixed-emotions",
-    "cold"
-    
+    "cold",
+    "irritated",
+    "hangry",
+    "hungry",
+    "erratic",
+    "manic",
+    "defiant",
+    "rebellious",
+    "messy"
 ]
 // words like scary
 // const scarySyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/scary/json"
@@ -397,7 +421,11 @@ const scarySyn = [
     "suspicious",
     "mischevious",
     "frightened",
-    "smug"
+    "smug",
+    "harrowing",
+    "evil",
+    "psychotic",
+    "insane"
 ]
 // applying background image. Credit to "superviespiel" on Reddit
 
