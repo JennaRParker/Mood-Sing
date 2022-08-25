@@ -81,7 +81,10 @@ const happySyn = [
     "hpyer",
     "energized",
     "energetic",
-    "ecstatic"
+    "ecstatic",
+    "awesome",
+    "silly",
+    "active"
 ]
 
 // words like sad= "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/sad/json"
@@ -138,7 +141,11 @@ const sadSyn = [
     "horrible",
     "awful",
     "terrible",
-    "serious"
+    "serious",
+    "bummed",
+    "cautious",
+    "nervous",
+    "timid"
 ]
 
 // words like peaceful : "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/peaceful/json"
@@ -169,6 +176,7 @@ const peacefulSyn = [
     "lowkey",
     "easy",
     "easy-going",
+    "at ease",
     "slow",
     "mellow",
     "nostalgic",
@@ -181,7 +189,6 @@ const peacefulSyn = [
     "meditative",
     "careful",
     "patient",
-    "cautious",
     "chill",
     "so so",
     "so-so",
@@ -192,7 +199,9 @@ const peacefulSyn = [
     "hanging-in",
     "hanging in",
     "content",
-    "relaxed"
+    "relaxed",
+    "cool"
+    
 ]
 
 // words like romantic = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/loving/json"
@@ -360,7 +369,15 @@ const angrySyn = [
     "punky",
     "indie",
     "stressed",
-    "tense"
+    "tense",
+    "pissed",
+    "harrassed",
+    "overworked",
+    "strained",
+    "unsettled",
+    "mixed-emotions",
+    "cold"
+    
 ]
 // words like scary
 // const scarySyn = "https://words.bighugelabs.com/api/2/b996e9430b23a7cc844249c00dd18e11/scary/json"
@@ -400,6 +417,7 @@ $submitBtn.hover(function () {
     $(this).css("background-color", "#df36f5");
 });
 
+
 // the function should 
 // match the user input adjective with a synonym from one of the synonym links
 // if adj is a happy synonym, shuffle the songs in const happyMusic
@@ -422,9 +440,9 @@ function songDisplay(musicChoice) {
         let $url = $(`<body><<a class= 'url' href="${randomSong.url}" target="_blank"> LISTEN NOW </a>`)
         $('p').remove();
         $('a').remove()
-        $('body').append($p);
-        $('body').append($p2);
-        $('body').append($url);
+        $('main').append($p);
+        $('main').append($p2);
+        $('main').append($url);
     })
 }
 
@@ -447,11 +465,22 @@ function getSyn(event) {
         } else if (peacefulSyn[i] === $userInput.val()) {
             songDisplay(peacefulMusic);
         } else if (romanticSyn[i] === $userInput.val()) {
-            songDisplay(romanticMusic);  
-        }          
+            songDisplay(romanticMusic);
+        }
     }
 }
 
 // event listener to trigger getSyn function when the submit button is clicked
 
 $submitBtn.on('click', getSyn)
+
+$('.open-modal').on('click', function (makeVisible) {
+    const $modalContent = $(`<div class="modal-content"><img src="http://1.bp.blogspot.com/-fTHvMZqJCVw/T3RDQU8p-VI/AAAAAAAABEI/7vVcexEjR-Y/s1600/moodring.png" width="300" height="300"></div>`);
+    const $remove = $(`<button type="button" class="open-modal" data-open=".modalId">X</button>`)
+    $('.modal-container').append($modalContent);
+    $('.helper').append($remove);
+    $remove.on('click', function (makeInvisible) {
+        $modalContent.remove()
+        $remove.remove()
+    })
+})
