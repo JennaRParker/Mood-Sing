@@ -484,6 +484,7 @@ function getSyn(event) {
 // event listener to trigger getSyn function when the submit button is clicked
 
 $submitBtn.on('click', getSyn)
+$submitBtn.on('vclick', getSyn)
 
 // credit of modal info-graphic to Katherine Velie at http://antweak.blogspot.com/2012/03/mood-ring-for-my-interior-mood-swings.html
 
